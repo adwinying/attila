@@ -1,4 +1,4 @@
-<nav id="menu">
+{{!-- <nav id="menu">
 	<a class="close-button">Close</a>
 	<div class="nav-wrapper">
 		<p class="nav-label">Menu</p>
@@ -12,11 +12,25 @@
 			{{#if @blog.facebook}}
 			<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@blog.facebook}}"><i class="ic ic-facebook"></i> Facebook</a></li>
 			{{/if}}
-			{{#if @labs.subscribers}}
-			<li class="nav-subscribe"><a href="{{@blog.url}}/subscribe/"><i class="ic ic-mail"></i> Subscribe</a></li>
-			{{else}}
-			<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
-			{{/if}}
 		</ul>
 	</div>
+</nav> --}}
+
+
+<nav id="navigation">
+	{{#if @blog.logo}}
+	<span class="blog-logo">
+		<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
+	</span>
+	{{/if}}
+	<ul class="navigation-links">
+		{{#foreach navigation}}
+		<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+		{{#if @labs.subscribers}}
+		<li class="nav-subscribe"><a href="{{@blog.url}}/subscribe/"><i class="ic ic-mail"></i> Subscribe</a></li>
+		{{else}}
+		<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i></a></li>
+		{{/if}}
+	</ul>
 </nav>

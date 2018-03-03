@@ -1,7 +1,20 @@
 {{!< default}}
 <header id="blog-header"{{#if @blog.cover_image}} class="has-cover"{{/if}}>
 	<div class="inner">
-		{{navigation}}
+		<div id="navbar">
+			{{#if @blog.logo}}
+			<span class="blog-logo">
+				<a href="{{@blog.url}}">
+					{{#if @blog.cover_image}}
+						<img src="../src/img/logo-light.png" alt="Blog Logo" />
+					{{else}}
+						<img src="{{@blog.logo}}" alt="Blog Logo" />
+					{{/if}}
+				</a>
+			</span>
+			{{/if}}
+			{{navigation}}
+		</div>
 		<h1 class="blog-name"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
 		{{#if @blog.description}}
 		<span class="blog-description">{{@blog.description}}</span>

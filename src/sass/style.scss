@@ -522,7 +522,7 @@ img {
    Navigation
    ========================================================================== */
 
-#navigation {
+#navbar {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -584,7 +584,9 @@ img {
 }
 .navigation-links {
 	display: flex;
-	margin: 1.3em 1em 1em 1em;
+	justify-content: flex-end;
+	font-size: 0.8em;
+	margin: 1.6em 1em 1em 1em;
 	padding-left: 0;
 	overflow-x: auto;
 }
@@ -603,6 +605,10 @@ img {
 .navigation-links > li > a:hover > i {
 	color: $color-blue-30;
 }	
+.has-cover .navigation-links > li > a:hover,
+.has-cover .navigation-links > li > a:hover > i {
+	color: $color-gray-98;
+}
 
 /* ==========================================================================
    Menu
@@ -1446,6 +1452,9 @@ img {
 @media only screen and (max-width: 640px) {
 	html {
 	    font-size: 50%;
+	}
+	.navigation-links {
+		justify-content: flex-start;
 	}
 	.post-share,
 	.post-tags {

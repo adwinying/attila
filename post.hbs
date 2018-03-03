@@ -8,7 +8,20 @@
 
 <header id="post-header"{{#if feature_image}} class="has-cover" {{/if}}>
 	<div class="inner">
-		{{navigation}}
+		<div id="navbar">
+			{{#if @blog.logo}}
+			<span class="blog-logo">
+				<a href="{{@blog.url}}">
+					{{#if feature_image}}
+						<img src="../src/img/logo-light.png" alt="Blog Logo" />
+					{{else}}
+						<img src="{{@blog.logo}}" alt="Blog Logo" />
+					{{/if}}
+				</a>
+			</span>
+			{{/if}}
+			{{navigation}}
+		</div>
 		<h1 class="post-title">{{{title}}}</h1>
 		<span class="post-meta">{{author}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
 		{{#if feature_image}}<div class="post-cover cover" style="background-image: url('{{feature_image}}');"></div>{{/if}}

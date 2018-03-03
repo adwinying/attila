@@ -13,7 +13,19 @@
 				</a>
 			</span>
 			{{/if}}
-			{{navigation}}
+			{{#if @blog.navigation}}
+				{{navigation}}
+			{{else}}
+				<nav>
+					<ul class="navigation-links">
+						{{#if @labs.subscribers}}
+						<li class="nav-subscribe"><a href="{{@blog.url}}/subscribe/"><i class="ic ic-mail"></i> Subscribe</a></li>
+						{{else}}
+						<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i></a></li>
+						{{/if}}
+					</ul>
+				</nav>
+			{{/if}}
 		</div>
 		<h1 class="blog-name"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
 		{{#if @blog.description}}

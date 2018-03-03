@@ -3,22 +3,32 @@
 {{#author}}
 <header id="blog-header"{{#if cover_image}} class="has-cover"{{else}}{{#if @blog.cover_image}} class="has-cover"{{/if}}{{/if}}>
 	<div class="inner">
-		<nav id="navigation">
+		<div id="navbar">
 			{{#if @blog.logo}}
 			<span class="blog-logo">
-				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
-			</span>
-			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+				<a href="{{@blog.url}}">
+					{{#if cover_image}}
+						<img src="{{asset "img/logo-light.png"}}" alt="Blog Logo" />
+					{{else}}
+						<img src="{{@blog.logo}}" alt="Blog Logo" />
+					{{/if}}
+				</a>
 			</span>
 			{{/if}}
 			{{#if @blog.navigation}}
-			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
-			</span>
+				{{navigation}}
+			{{else}}
+				<nav>
+					<ul class="navigation-links">
+						{{#if @labs.subscribers}}
+						<li class="nav-subscribe"><a href="{{@blog.url}}/subscribe/"><i class="ic ic-mail"></i> Subscribe</a></li>
+						{{else}}
+						<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i></a></li>
+						{{/if}}
+					</ul>
+				</nav>
 			{{/if}}
-		</nav>
+		</div>
 		{{#if cover_image}}
 		<div class="blog-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>
 		{{else}}

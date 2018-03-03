@@ -6,7 +6,7 @@
 			<span class="blog-logo">
 				<a href="{{@blog.url}}">
 					{{#if @blog.cover_image}}
-						<img src="../src/img/logo-light.png" alt="Blog Logo" />
+						<img src="{{asset "img/logo-light.png"}}" alt="Blog Logo" />
 					{{else}}
 						<img src="{{@blog.logo}}" alt="Blog Logo" />
 					{{/if}}

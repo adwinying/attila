@@ -9,7 +9,11 @@
 					{{#if tag.feature_image}}
 						<img src="{{asset "img/logo-light.png"}}" alt="Blog Logo" />
 					{{else}}
-						<img src="{{@blog.logo}}" alt="Blog Logo" />
+						{{#if @blog.cover_image}}
+							<img src="{{asset "img/logo-light.png"}}" alt="Blog Logo" />
+						{{else}}
+							<img src="{{@blog.logo}}" alt="Blog Logo" />
+						{{/if}}
 					{{/if}}
 				</a>
 			</span>

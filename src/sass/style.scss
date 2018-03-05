@@ -3,6 +3,7 @@
    ========================================================================== */
 
 @import "normalize";
+@import "prismjs";
 @import "colors";
 @import "icons";
 @import "fonts";
@@ -172,7 +173,7 @@ blockquote p:last-child {
 }
 em, i {
 	font-style: italic;
-	color: $color-gray-90;
+	color: $color-blue-15;
 }
 strong, b {
 	font-weight: 700;
@@ -1003,6 +1004,12 @@ img {
 	max-width: none;
 	width: 110%;
 	margin-left: -5%;
+}
+
+// Override prism.js default line-height
+code[class*=language-],
+pre[class*=language-] {
+	line-height: 2em !important;
 }
 
 

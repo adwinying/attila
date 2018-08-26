@@ -3,7 +3,6 @@
    ========================================================================== */
 
 @import "normalize";
-@import "prismjs";
 @import "colors";
 @import "icons";
 @import "fonts";
@@ -1076,12 +1075,6 @@ img[src$="#full"] {
 .post-content a:hover,
 .post-content a:focus {
 	color: $primary-color;
-}
-
-// Override prism.js default line-height
-code[class*=language-],
-pre[class*=language-] {
-	line-height: 2em !important;
 }
 
 

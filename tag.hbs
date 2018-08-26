@@ -37,7 +37,7 @@
 		{{#if tag.description}}
 			{{tag.description}}
 		{{else}}
-			Posts: {{pagination.total}}
+			{{t "Posts"}}: {{pagination.total}}
 		{{/if}}
 		</span>
 		{{#if tag.feature_image}}
@@ -53,9 +53,9 @@
 <div id="index" class="container">
 
 	<main class="content" role="main">
-	
+
 		{{> "loop"}}
-	
+
 	</main>
 
 </div>
